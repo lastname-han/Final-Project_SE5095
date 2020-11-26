@@ -9,6 +9,7 @@ def read_data(file_path):
     df = pd.read_csv(file_path,header = None, names = column_names)
     return df
 
+# !! Have to change pathname of data file !!
 dataset = read_data(r'/Users/seulki_han/Desktop/Ph.D/Research/Gerber Tech/Model/data.csv')
 
 # Set input & output dimensions
