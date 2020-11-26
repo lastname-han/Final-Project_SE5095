@@ -15,7 +15,7 @@ dataset = read_data(r'/Users/seulki_han/Desktop/Ph.D/Research/Gerber Tech/Model/
 x = dataset.iloc[:, 2:].values
 y = dataset.iloc[:, 0].values
 
-# Split train data and test data
+# Split train data (80%) and test data (20%)
 from sklearn.model_selection import train_test_split
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.20)
 
@@ -27,7 +27,7 @@ scaler.fit(x_train)
 x_train = scaler.transform(x_train)
 x_test = scaler.transform(x_test)
 
-# KNN model
+# KNN model (k value = 5)
 from sklearn.neighbors import KNeighborsClassifier
 classifier = KNeighborsClassifier(n_neighbors=5)
 classifier.fit(x_train, y_train)
